@@ -25,7 +25,7 @@ ReactDOM.render(
   <Router>
       <BaseLayout>
         <Routes>
-          <Route path="/" element={<App />}/>
+          <Route path="/" element={<Categories />}/>
           <Route path='/categories' element={<Categories />}/>
         </Routes>
       </BaseLayout>

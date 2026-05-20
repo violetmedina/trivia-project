@@ -1,8 +1,9 @@
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 60%;
+  justify-content: flex-start;
+  height: 100vh;
   width: auto;
 }
 
@@ -66,14 +67,6 @@
 .card__face--back:hover {
   box-shadow: 0px 3px 18px 3px #c0c3cf;
 }
-
-/* .card__face--back p {
-    color: #FFF;
-    font-size: 15px;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-} */
 
 .card__content {
   background-color: white;
@@ -160,4 +153,22 @@ h4 {
   font-size: 25px;
   text-align: center;
   padding: 20px;
+}
+
+div.howto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+li {
+  text-align: left;
 }

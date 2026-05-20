@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 import Answer from './Answer';
@@ -13,14 +13,10 @@ const Game = ({ value, text }) => {
     const [showAnswers, setShowAnswers] = useState(true);
 
     const answersArr = useSelector(state => state.answerReducer.answers)
-    const cAnswer = useSelector(state => state.answerReducer.cAnswer)
-
-    // console.log(answersArr)
-    // console.log(shuffledAnswers)
-    // console.log(cAnswer)
+    // const cAnswer = useSelector(state => state.answerReducer.cAnswer) //not used?
+    const gameSection = useRef(null)
 
     useEffect(() => {
-
         const triviaData = async () => {
             let url = `https://opentdb.com/api.php?amount=9&category=${value}&type=multiple`
             let response = await fetch(url)
@@ -45,28 +41,39 @@ const Game = ({ value, text }) => {
         return array;
     }
 
+    useEffect(() => {
+        scrollDown()
+    }, [])
+
+    const scrollDown = () => {
+        window.scrollTo({
+            top: gameSection.current.offsetTop,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <>
-            <h2>Selected Category: <b>{text}</b></h2>
-            <div className="container">
-                <div className="row">
-                    {triviaData.map((question, index) => {
-                        return (
-                            <div key={index} id="cards" className="col-4 d-flex flex-wrap justify-content-center">
-                                <Card question={question} index={index} />
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-            <h4>Correct answers mark the card 'O'. Click on a Card... Make A Tic-Tac-Toe to Win!</h4>
-
-            <div className="container">
-                <h5>
+            <div ref={gameSection}>
+                <h2>Selected Category: <b>{text}</b></h2>
+                <div className="container">
                     <div className="row">
-                        {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} /> : null}
+                        {triviaData.map((question, index) => {
+                            return (
+                                <div key={index} id="cards" className="col-4 d-flex flex-wrap justify-content-center">
+                                    <Card question={question} index={index} />
+                                </div>
+                            )
+                        })}
                     </div>
-                </h5>
+                </div>
+                <div className="container">
+                    <h5>
+                        <div className="row">
+                            {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} /> : null}
+                        </div>
+                    </h5>
+                </div>
             </div>
         </>
     ) //end of return

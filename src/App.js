@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <>
-    <Link to='/categories'><img src="/play-now-button.gif" alt='Start Game'/></Link>
+      {/* <Link to='/categories'><img src="/play-now-button.gif" alt='Start Game' /></Link> */}
     </>
   )
 }

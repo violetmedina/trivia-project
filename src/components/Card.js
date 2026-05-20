@@ -11,18 +11,18 @@ const Card = ({ question, index }) => {
     const amICorrect = useSelector(state => state.answerReducer.boardState[index])
 
     const dispatch = useDispatch();
-    const gameSection = useRef(null)
+    // const gameSection = useRef(null)
 
-    useEffect(() => {
-        scrollDown()
-    }, [])
+    // useEffect(() => {
+    //     scrollDown()
+    // }, [])
 
-    const scrollDown = () => {
-        window.scrollTo({
-            top: gameSection.current.offsetTop,
-            behavior: 'smooth',
-        });
-    };
+    // const scrollDown = () => {
+    //     window.scrollTo({
+    //         top: gameSection.current.offsetTop,
+    //         behavior: 'smooth',
+    //     });
+    // };
 
     const handleQuestion = (e, ca, ia, index) => {
         e.preventDefault();
@@ -36,7 +36,7 @@ const Card = ({ question, index }) => {
 
     return (
         <>
-            <div ref={gameSection}></div>
+            {/* <div ref={gameSection}></div> */}
             <div id="card" className="card" disabled={true}>
                 <div onClick={(e) => flipCard(e)} className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
                     {/* <!-- front of card --> */}

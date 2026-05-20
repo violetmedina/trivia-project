@@ -36,23 +36,28 @@ const Categories = () => {
 
     return (
         <>
-            <h2>Please Select A Category...</h2>
-            <form className="flexCont" onSubmit={handleSubmit}>
-                <select onChange={handleChange}>
-                    <option defaultValue={'Pick A Category'} >Pick A Category</option>
-                    {Array.isArray(categories)
-                        ?
-                        categories.map(category => <option key={category.category} value={category.value}>{category.category}</option>)
-                        :
-                        ""}
-                </select>
-                <button type='submit'>Submit</button>
-            </form>
-            {/* <img src='./downArrowAnimated.gif' size='50px' /> */}
+        <h1>How to Play:</h1>
+            <div className='howto'>This fun game is based on the gameshow Hollywood Squares. Here is how to play!</div>
+            <div className='howto'>
+                <ol>
+                    <li>Select a trivia category from the dropdown list then click the 'Submit' button. A Tic-Tac-Toe gameboard will display below.</li>
+                    <li>Pick a slot you want to play, and click the card. The card will rotate to display a trivia question within the selected category as well as a multi-choice answer section.</li>
+                    <li>When you select an answer, either an 'X' (incorrect) or an 'O' (correct) will replace the question on that card.</li>
+                    <li>Get a Tic-Tac-Toe to win!</li>
+                </ol>
+                <form className='flexCont' onSubmit={handleSubmit}>
+                    <select useRef='categoryDropdown' onChange={handleChange}>
+                        <option defaultValue={'Pick A Category'}>Pick a category...</option>
+                        {Array.isArray(categories)
+                            ?
+                            categories.map(category => <option key={category.category} value={category.value}>{category.category}</option>)
+                            :
+                            ""}
+                    </select>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
             {finalValue !== "" ? <Game value={finalValue} text={finalCategory} /> : null}
-            <h5>
-                <div>Click <a href='/'>HERE</a> to Reset the Game</div>
-            </h5>
         </>
     )
 }
