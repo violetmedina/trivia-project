@@ -1,34 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import combineAnswers from '../actions/answersAction';
 import './main.css'
 import he from 'he'
 
 const Card = ({ question, index }) => {
-
     const [isFlipped, setIsFlipped] = useState(false)
-
     const amICorrect = useSelector(state => state.answerReducer.boardState[index])
-
     const dispatch = useDispatch();
-    // const gameSection = useRef(null)
-
-    // useEffect(() => {
-    //     scrollDown()
-    // }, [])
-
-    // const scrollDown = () => {
-    //     window.scrollTo({
-    //         top: gameSection.current.offsetTop,
-    //         behavior: 'smooth',
-    //     });
-    // };
-
+    
     const handleQuestion = (e, ca, ia, index) => {
         e.preventDefault();
         dispatch(combineAnswers(ia, ca, index));
     }
-
     const flipCard = (e) => {
         setIsFlipped(true)
         handleQuestion(e, question.correct_answer, question.incorrect_answers, index)
