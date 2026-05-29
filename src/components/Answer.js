@@ -12,11 +12,12 @@ const Answer = ({ answer, index, setShowAnswers }) => {
   const cAnswer = useSelector(state => state.answerReducer.cAnswer)
   const pickedAnswer = useSelector(state => state.answerReducer.pickedAnswer)
   const isCorrect = useSelector(state => state.answerReducer.isCorrect)
-  const winnerX = useSelector(state => JSON.stringify(state.winnerReducer.winnerX))
-  const winnerO = useSelector(state => JSON.stringify(state.winnerReducer.winnerO))
+  // const winnerX = useSelector(state => JSON.stringify(state.winnerReducer.winnerX))
+  // const winnerO = useSelector(state => JSON.stringify(state.winnerReducer.winnerO))
 
   const [show, setShow] = useState(false);
-  const [gameBoard, setGameBoard] = useState((useSelector(state => JSON.stringify(state.answerReducer.boardState))))
+  // const [gameBoard, setGameBoard] = useState((useSelector(state => JSON.stringify(state.answerReducer.boardState))))
+  const [gameBoard] = useState((useSelector(state => JSON.stringify(state.answerReducer.boardState))))
 
   const dispatch = useDispatch();
 
@@ -52,13 +53,26 @@ const Answer = ({ answer, index, setShowAnswers }) => {
         }
       }
 
+  function incorrectAnswer() {
+    if ((gameBoard[0] === [false, "no"] && gameBoard[1] === [false, "no"] && gameBoard[2] === [false, "no"]) ||
+        (gameBoard[3] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[5] === [false, "no"]) ||
+        (gameBoard[6] === [false, "no"] && gameBoard[7] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+        (gameBoard[0] === [false, "no"] && gameBoard[3] === [false, "no"] && gameBoard[6] === [false, "no"]) ||
+        (gameBoard[1] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[7] === [false, "no"]) ||
+        (gameBoard[2] === [false, "no"] && gameBoard[5] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+        (gameBoard[0] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+        (gameBoard[2] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[6] === [false, "no"]))
+        {
+          console.log("YOU LOSE")
+        }
+      }
+
 return (
   <>
 
     <form className='d-flex flex-column'>
       <Button variant="dark" onClick={(e) => handleAnswer(e, answer)}>{index + 1}. {answer}</Button>{' '}
     </form>
-    <br></br>
 
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
