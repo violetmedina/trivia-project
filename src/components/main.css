@@ -8,13 +8,14 @@
 }
 
 .card {
+  display: flex;
   margin: 0px;
-  width: 20vw;
-  height: 25vh;
+  width: 15vw;
+  height: 30vh;
   perspective: 1000px;
   background-color: transparent !important;
-  border: white;
-  padding-top: 30px;
+  /* border: black; */
+  padding: 10px 0px 10px 0px;
 }
 
 .card__inner {
@@ -70,7 +71,7 @@
 
 .card__content {
   background-color: white;
-  width: 20vw;
+  width: 15vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -120,6 +121,15 @@
   border-radius: 0px 0px 50% 0px;
 }
 
+.gameBoard {
+    background-image: url('./layout/images/tic-tac-toe-board.png');
+    background-size: contain;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    height: 55vw;
+    /* width: 100%; */
+}
+
 a {
   color: black;
 }
@@ -137,6 +147,7 @@ div {
   padding: 0px;
   scrollbar-gutter: 0px;
   text-align: center;
+  justify-items: center;
   vertical-align: center;
 }
 
