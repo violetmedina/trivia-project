@@ -49,10 +49,6 @@ const answerReducer = (state, action) =>{
                     boardState: {...state.boardState, [state.activeCard]: [true, 'no']}
                 }
             }
-        // case "UPDATE_BOARD":
-        //     return {
-        //         boardState: state.boardState
-        //     }
 
         default: return state
     }
