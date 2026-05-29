@@ -43,7 +43,7 @@ const Categories = () => {
                     <li>Select a trivia category from the dropdown list then click the 'Submit' button. A Tic-Tac-Toe gameboard will display below.</li>
                     <li>Pick a slot you want to play, and click the card. The card will rotate to display a trivia question within the selected category as well as a multi-choice answer section.</li>
                     <li>When you select an answer, either an 'X' (incorrect) or an 'O' (correct) will replace the question on that card.</li>
-                    <li>Get a Tic-Tac-Toe to win!</li>
+                    <li>Get a Tic-Tac-Toe of 'O's (correct answers) to win!</li>
                 </ol>
                 <form className='flexCont' onSubmit={handleSubmit}>
                     <select useRef='categoryDropdown' onChange={handleChange}>
