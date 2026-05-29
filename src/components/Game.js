@@ -54,10 +54,10 @@ const Game = ({ value, text }) => {
 
     return (
         <>
-            <div ref={gameSection}>
+            <div ref={gameSection} className=''>
                 <h2>Selected Category: <b>{text}</b></h2>
-                <div className="container">
-                    <div className="row">
+                <div className=''>
+                    <div className='row col-6'>
                         {triviaData.map((question, index) => {
                             return (
                                 <div key={index} id="cards" className="col-4 d-flex flex-wrap justify-content-center">
@@ -67,12 +67,10 @@ const Game = ({ value, text }) => {
                         })}
                     </div>
                 </div>
-                <div className="container">
-                    <h5>
-                        <div className="row">
-                            {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} /> : null}
-                        </div>
-                    </h5>
+            </div>
+            <div className="container">
+                <div className="row answers">
+                    {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} /> : null}
                 </div>
             </div>
         </>
@@ -82,7 +80,7 @@ const Game = ({ value, text }) => {
 const DisplayAnswers = ({ answersArr, setShowAnswers }) => {
     return (
         <>
-            <div>Answers:</div><br /><br />
+            <h2>Answers:</h2>
             {answersArr !== undefined
                 ?
                 answersArr.map((answer, index) => {
@@ -90,7 +88,6 @@ const DisplayAnswers = ({ answersArr, setShowAnswers }) => {
                         <div key={index} className='col-6'>
                             <div>
                                 <Answer answer={he.decode(answer)} index={index} setShowAnswers={setShowAnswers} />
-                                {/* {showAnswers ? <DisplayAnswers answer={answer} index={index}/> : null} */}
                             </div>
                         </div>
                     )
