@@ -1,3 +1,24 @@
+.answer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: no-wrap;
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  perspective: 1000px;
+  background-color: transparent;
+  gap: 16px;
+}
+
+.answer > * {
+  width: calc((100% - 3 * 16px) / 4); /* 3 cards, accounting for 2 gaps */
+  flex-shrink: 0;
+  min-width: 150px; /* prevents cards from getting too narrow */
+  max-width: 300px; /* optional cap so they don't stretch too wide */
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,7 +35,7 @@
   height: 30vh;
   perspective: 1000px;
   background-color: transparent !important;
-  /* border: black; */
+  border: black;
   padding: 10px 0px 10px 0px;
 }
 
@@ -122,12 +143,12 @@
 }
 
 .gameBoard {
-    background-image: url('./layout/images/tic-tac-toe-board.png');
-    background-size: contain;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    height: 55vw;
-    /* width: 100%; */
+  /* background-image: url('./layout/images/tic-tac-toe-board.png'); */
+  background-size: contain;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  height: 55vw;
+  /* width: 100%; */
 }
 
 a {
@@ -177,7 +198,6 @@ ol {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
 }
 
 li {

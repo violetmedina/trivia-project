@@ -81,19 +81,19 @@ const DisplayAnswers = ({ answersArr, setShowAnswers }) => {
     return (
         <>
             <h2>Answers:</h2>
-            {answersArr !== undefined
-                ?
-                answersArr.map((answer, index) => {
-                    return (
-                        <div key={index} className='col-6'>
-                            <div>
-                                <Answer answer={he.decode(answer)} index={index} setShowAnswers={setShowAnswers} />
+            <div className='answer'>
+                {answersArr !== undefined
+                    ?
+                    answersArr.map((answer, index) => {
+                        return (
+                            <div key={index} className='answer__card'>
+                                    <Answer answer={he.decode(answer)} index={index} setShowAnswers={setShowAnswers} />
                             </div>
-                        </div>
-                    )
-                })
-                : ""
-            }
+                        )
+                    })
+                    : ""
+                }
+            </div>
         </>
     )
 }
