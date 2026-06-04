@@ -8,7 +8,7 @@ const Card = ({ question, index }) => {
     const [isFlipped, setIsFlipped] = useState(false)
     const amICorrect = useSelector(state => state.answerReducer.boardState[index])
     const dispatch = useDispatch();
-    
+
     const handleQuestion = (e, ca, ia, index) => {
         e.preventDefault();
         dispatch(combineAnswers(ia, ca, index));
@@ -21,7 +21,7 @@ const Card = ({ question, index }) => {
     return (
         <>
             {/* <div ref={gameSection}></div> */}
-            <div id="card" className="card" disabled={true}>
+            <div id="card" className="card">
                 <div onClick={(e) => flipCard(e)} className={isFlipped ? "card__inner is-flipped" : "card__inner"}>
                     {/* <!-- front of card --> */}
                     <div className="card__face card__face--front"></div>

@@ -54,18 +54,16 @@ const Game = ({ value, text }) => {
 
     return (
         <>
-            <div ref={gameSection} className=''>
-                <h2>Selected Category: <b>{text}</b></h2>
-                <div className=''>
-                    <div className='row col-6'>
+            <h2>Selected Category: <b>{text}</b></h2>
+            <div ref={gameSection} className='gameboard'>
+                <div className='card__layout'>
                         {triviaData.map((question, index) => {
                             return (
-                                <div key={index} id="cards" className="col-4 d-flex flex-wrap justify-content-center">
+                                <div key={index} className="card__cell">
                                     <Card question={question} index={index} />
                                 </div>
                             )
                         })}
-                    </div>
                 </div>
             </div>
             <div className="container">

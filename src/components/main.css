@@ -8,39 +8,42 @@
 }
 
 .card {
-  display: flex;
+  /* display: flex;
   margin: 0px;
   width: 15vw;
-  height: 30vh;
+  height: 30vh; */
+  width: 100%;
+  height: 100%;
   perspective: 1000px;
-  background-color: transparent !important;
-  /* border: black; */
-  padding: 10px 0px 10px 0px;
+  /* background-color: transparent !important; */
+  /* border: white;
+  padding: 10px 0px 10px 0px;*/
 }
 
 .card__inner {
-  background-size: contain;
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 1s;
+  /* background-size: contain; */
   transform-style: preserve-3d;
-  cursor: pointer;
-  position: relative;
+  transition: transform 1s;
+  /* cursor: pointer; */
 }
 
 .card__inner.is-flipped {
   transform: rotateY(180deg);
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .card__face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  inset: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  overflow: hidden;
-  border-radius: 16px;
+  /* overflow: hidden;
+  border-radius: 16px; */
 }
 
 .card__face--front:hover {
@@ -70,9 +73,9 @@
 }
 
 .card__content {
-  background-color: white;
-  width: 15vw;
+  width: 100%;
   height: 100%;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,13 +124,34 @@
   border-radius: 0px 0px 50% 0px;
 }
 
-.gameBoard {
+.card__layout {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, .5fr);
+    grid-template-rows: repeat(3, .5fr);
+    /* justify-items: stretch; */
+    box-sizing: border-box;
+    padding: 6%;   /* tuning knob: insets cards from the board's outer edge */
+    gap: 7%;       /* tuning knob: keeps cards off the painted grid lines */
+}
+
+.card__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.gameboard {
     background-image: url('./layout/images/tic-tac-toe-board.png');
     background-size: contain;
-    background-attachment: scroll;
     background-repeat: no-repeat;
-    height: 55vw;
-    /* width: 100%; */
+    background-position: center;
+    width: 70vw;
+    aspect-ratio: 1 / 1;
+    max-width: 95vw;
+    margin: 0 auto;
 }
 
 a {
@@ -142,14 +166,14 @@ body {
   background-color: tan;
 }
 
-div {
+/* div {
   margin: 0px;
   padding: 0px;
   scrollbar-gutter: 0px;
   text-align: center;
   justify-items: center;
   vertical-align: center;
-}
+} */
 
 h2,
 h5 {

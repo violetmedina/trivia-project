@@ -46,7 +46,7 @@ const Categories = () => {
                     <li>Get a Tic-Tac-Toe of 'O's (correct answers) to win!</li>
                 </ol>
                 <form className='flexCont' onSubmit={handleSubmit}>
-                    <select useRef='categoryDropdown' onChange={handleChange}>
+                    <select useref='categoryDropdown' onChange={handleChange}>
                         <option defaultValue={'Pick A Category'}>Pick a category...</option>
                         {Array.isArray(categories)
                             ?
