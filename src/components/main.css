@@ -15,8 +15,8 @@
 .answer > * {
   width: calc((100% - 3 * 16px) / 4); /* 3 cards, accounting for 2 gaps */
   flex-shrink: 0;
-  min-width: 150px; /* prevents cards from getting too narrow */
-  max-width: 300px; /* optional cap so they don't stretch too wide */
+  min-width: 150px;
+  max-width: 300px;
 }
 
 .container {

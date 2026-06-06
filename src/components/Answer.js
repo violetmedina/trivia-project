@@ -53,19 +53,19 @@ const Answer = ({ answer, index, setShowAnswers }) => {
         }
       }
 
-  function incorrectAnswer() {
-    if ((gameBoard[0] === [false, "no"] && gameBoard[1] === [false, "no"] && gameBoard[2] === [false, "no"]) ||
-        (gameBoard[3] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[5] === [false, "no"]) ||
-        (gameBoard[6] === [false, "no"] && gameBoard[7] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
-        (gameBoard[0] === [false, "no"] && gameBoard[3] === [false, "no"] && gameBoard[6] === [false, "no"]) ||
-        (gameBoard[1] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[7] === [false, "no"]) ||
-        (gameBoard[2] === [false, "no"] && gameBoard[5] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
-        (gameBoard[0] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
-        (gameBoard[2] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[6] === [false, "no"]))
-        {
-          console.log("YOU LOSE")
-        }
-      }
+  // function incorrectAnswer() {
+  //   if ((gameBoard[0] === [false, "no"] && gameBoard[1] === [false, "no"] && gameBoard[2] === [false, "no"]) ||
+  //       (gameBoard[3] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[5] === [false, "no"]) ||
+  //       (gameBoard[6] === [false, "no"] && gameBoard[7] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+  //       (gameBoard[0] === [false, "no"] && gameBoard[3] === [false, "no"] && gameBoard[6] === [false, "no"]) ||
+  //       (gameBoard[1] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[7] === [false, "no"]) ||
+  //       (gameBoard[2] === [false, "no"] && gameBoard[5] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+  //       (gameBoard[0] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[8] === [false, "no"]) ||
+  //       (gameBoard[2] === [false, "no"] && gameBoard[4] === [false, "no"] && gameBoard[6] === [false, "no"]))
+  //       {
+  //         console.log("YOU LOSE")
+  //       }
+  //     }
 
 return (
   <>

@@ -24,6 +24,7 @@ const Game = ({ value, text }) => {
             setTriviaData(data.results)
         }
         triviaData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const Game = ({ value, text }) => {
         <>
             <div ref={gameSection} className=''>
                 <h2>Selected Category: <b>{text}</b></h2>
-                <div className=''>
+                <div>
                     <div className='row col-6'>
                         {triviaData.map((question, index) => {
                             return (
@@ -70,7 +71,7 @@ const Game = ({ value, text }) => {
             </div>
             <div className="container">
                 <div className="row answers">
-                    {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} /> : null}
+                    {showAnswers ? <DisplayAnswers answersArr={answersArr} setShowAnswers={setShowAnswers} setShuffledAnswers={shuffledAnswers}/> : null}
                 </div>
             </div>
         </>

@@ -7,7 +7,6 @@ import logger from 'redux-logger';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import Categories from './components/Categories';
 
 import BaseLayout from './components/layout/BaseLayout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -25,8 +24,7 @@ ReactDOM.render(
   <Router>
       <BaseLayout>
         <Routes>
-          <Route path="/" element={<Categories />}/>
-          <Route path='/categories' element={<Categories />}/>
+          <Route path="/" element={<App />}/>
         </Routes>
       </BaseLayout>
     </Router>
